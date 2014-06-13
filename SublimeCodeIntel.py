@@ -84,7 +84,7 @@ import threading
 import logging
 from cStringIO import StringIO
 
-CODEINTEL_HOME_DIR = os.path.expanduser(os.path.join('~', '.codeintel'))
+CODEINTEL_HOME_DIR = os.environ.get('CODEINTEL_HOME') || os.path.expanduser(os.path.join('~', '.codeintel'))
 __file__ = os.path.normpath(os.path.abspath(__file__))
 __path__ = os.path.dirname(__file__)
 

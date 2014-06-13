@@ -390,7 +390,7 @@ class Database(object):
         self._proj_zone_from_proj_path = weakref.WeakValueDictionary()
 
         if base_dir is None:
-            self.base_dir = expandvars(expanduser(join("~", ".codeintel")))
+            self.base_dir = os.environ.get('CODEINTEL_HOME') || expandvars(expanduser(join("~", ".codeintel")))
         elif not isabs(base_dir):
             self.base_dir = abspath(base_dir)
         else:
